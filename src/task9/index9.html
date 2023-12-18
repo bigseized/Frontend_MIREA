@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Вход на сайт</title>
+  <style>
+    .like-button {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+    .liked {
+      background-color: orange;
+    }
+    .drawing {
+      cursor: crosshair;
+    }
+    .drawn-element {
+      z-index: -1;
+      position: absolute;
+      border-radius: 50px;
+      width: 20px;
+      height: 20px;
+      background-color: cyan;
+    }
+  </style>
+</head>
+<body>
+<h1>Пользовательский вход</h1>
+<form id="loginForm">
+  <label for="username">Имя пользователя:</label>
+  <input type="text" id="username" name="username" required>
+  <br>
+  <label for="password">Пароль:</label>
+  <input type="password" id="password" name="password" required>
+  <br>
+  <button type="submit">Войти</button>
+</form>
+
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    if (username === 'mishkapnz' && password === '123') {
+      var registration = prompt('Желаете пройти регистрацию на сайте? (Да/Нет)').toLowerCase();
+
+      if (registration === 'да') {
+        alert('Круто!');
+      } else {
+        alert('Попробуйте ещё раз.');
+      }
+    } else {
+      alert('Неверное имя пользователя или пароль. Попробуйте ещё раз.');
+    }
+  });
+</script>
+<button class="like-button" onclick="toggleLike()">Нравится</button>
+
+<script>
+  var isLiked = false;
+  var isDrawing = false;
+
+  function toggleLike() {
+    var button = document.querySelector('.like-button');
+    isLiked = !isLiked;
+
+    if (isLiked) {
+      button.classList.add('liked');
+      button.textContent = 'Не нравится';
+      startDrawing();
+    } else {
+      button.classList.remove('liked');
+      button.textContent = 'Нравится';
+      stopDrawing();
+    }
+  }
+
+  function startDrawing() {
+    if (!isDrawing) {
+      isDrawing = true;
+      document.body.classList.add('drawing');
+      document.addEventListener('mousemove', drawElement);
+      document.addEventListener('keydown', checkKey);
+    } else {
+      var elements = document.querySelectorAll('.drawn-element');
+      elements.forEach(function(element) {
+        element.parentNode.removeChild(element);
+      });
+    }
+  }
+
+  function stopDrawing() {
+    isDrawing = false;
+    document.body.classList.remove('drawing');
+    document.removeEventListener('mousemove', drawElement);
+    document.removeEventListener('keydown', checkKey);
+    var elements = document.querySelectorAll('.drawn-element');
+    elements.forEach(function(element) {
+      element.parentNode.removeChild(element);
+    });
+  }
+
+  function drawElement(event) {
+    if (isDrawing) {
+      var element = document.createElement('div');
+      element.className = 'drawn-element';
+      element.style.left = event.clientX - 10 + 'px';
+      element.style.top = event.clientY - 10 + 'px';
+      document.body.appendChild(element);
+    }
+  }
+
+  function checkKey(event) {
+    if (event.key === "Escape") {
+      stopDrawing();
+      var button = document.querySelector('.like-button');
+      button.classList.remove('liked');
+      button.textContent = 'Нравится';
+    }
+  }
+
+
+  var login = prompt("Введите ваш логин:");
+
+  if (login === "Админ") {
+    var password = prompt("Введите пароль:");
+
+    if (password === "123") {
+      alert("Здравствуйте!");
+    } else if (password === null) {
+      alert("Отменено");
+    } else {
+      alert("Неверный пароль");
+    }
+  } else if (login === null) {
+    alert("Отменено");
+  } else {
+    alert("Я вас не знаю");
+  }
+</script>
+</body>
+</html>

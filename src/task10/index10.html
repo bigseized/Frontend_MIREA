@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточки с текстом и Аккумулятор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script>
+
+    function shuffleArray(array) {
+        return array.slice().sort(() => Math.random() - 0.5);
+    }
+
+    let letters = [];
+
+    for (let i = 65; i <= 90; i++) {
+        letters.push(String.fromCharCode(i));
+    }
+    for (let i = 97; i <= 122; i++) {
+        letters.push(String.fromCharCode(i));
+    }
+
+    letters = shuffleArray(letters);
+    let capcha = letters.slice(0, 5).join("");
+
+    function checkBot() {
+        let usersEnter = prompt("Для регистрации на сайте введите капчу  " + capcha);
+        if (usersEnter != capcha) {
+            let numb1, numb2;
+            numb1 = Math.floor(Math.random() * 100) + 1;
+            numb2 = Math.floor(Math.random() * 100) + 1;
+            usersEnter = prompt("Ошибка! Попробуйте решить пример " + numb1 + " + " + numb2);
+            if (usersEnter == numb1 + numb2) {
+                alert("Верно!");
+            } else {
+                alert("Неверно! Попробуйте снова");
+                checkBot();
+            }
+        } else {
+            alert("Вы верно ввели капчу!");
+        }
+    }
+</script>
+<br>
+
+<div class="container">
+    <h1>Capcha</h1>
+    <button onclick="checkBot()" type="submit" class="regBtn" id="regBtn">Отправить</button>
+    <h1>Аккумулятор</h1>
+    <p>Начальное значение: <span id="startingValue">10</span></p>
+    <button id="readValueBtn">Ввести число</button>
+
+    <div class="card" id="card1"></div>
+    <div class="card" id="card2"></div>
+    <div class="card" id="card3"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

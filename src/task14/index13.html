@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combined HTML</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+
+<!-- Image Gallery and Selectable List Section -->
+<div class="left-wrapper">
+  <div id="contents">
+    <a href="https://github.com/bigseized/TinkoffCourseJava2023/pull/14/">Увидеть больше</a>
+    <br>
+    <a href="https://private-user-images.githubusercontent.com/91249122/289378824-b83e079b-f82c-4aa8-99af-6fd67de96e43.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDIyNjI4NzYsIm5iZiI6MTcwMjI2MjU3NiwicGF0aCI6Ii85MTI0OTEyMi8yODkzNzg4MjQtYjgzZTA3OWItZjgyYy00YWE4LTk5YWYtNmZkNjdkZTk2ZTQzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMTElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjExVDAyNDI1NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA4YzdmMTEyNmFhMzlhYjNmNTQzYzVjMzFmODJlMmRmODMxZTRjOWViZTk2NzE2ZjdhOGRlMmVhNTk0MGY0MjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.T0Bjh0dguNb4wwA8g409kHqrYSXIzThATJb3872A6YI">Увидеть меньше</a>
+  </div>
+
+  <div id="mainImage">
+    <img src="img/fractal3.png" class="main-image" />
+  </div>
+
+  <div id="gallery" class="gallery">
+    <img src="img/fractal1.jpg" class="thumbnail" onclick="changeImage('./img/demonsword.jpg')" width="120px" />
+    <img src="img/fractal3.png" class="thumbnail" onclick="changeImage('./img/hellokitty.png')" width="120px" />
+    <img src="img/fractal2.png" class="thumbnail" onclick="changeImage('./img/favicon.png')" width="120px" />
+  </div>
+</div>
+
+<h1 style="text-align: center; font-style: normal; font-size: xxx-large ">Selection list</h1>
+
+<div class="right-wrapper">
+  <ul id="selectableList">
+    <li>To select 1</li>
+    <li>To select 2</li>
+    <li>To select 3</li>
+    <li>To select 4</li>
+    <li>To select 5</li>
+    <li>To select 6</li>
+  </ul>
+</div>
+
+<h1 style="text-align: center; font-style: normal; font-size: xxx-large ">Slider section</h1>
+
+
+<!-- Slider Section -->
+<div class="slider-wrapper">
+  <div id="slider">
+    <div id="slider-bar">
+      <div id="slider-handle"></div>
+    </div>
+  </div>
+
+</div>
+
+<h1 style="text-align: center; font-style: normal; font-size: xxx-large ">Cart section</h1>
+
+
+<!-- Cart Section -->
+<div class="wrapper">
+  <div class="products-wrapper" id="productWrapper">
+    <div class="product">
+      <div class="item" data-price="10" draggable="true" id="item1">Товар 1 - $10</div>
+      <div class="item" data-price="20" draggable="true" id="item2">Товар 2 - $20</div>
+      <div class="item" data-price="30" draggable="true" id="item3">Товар 3 - $30</div>
+    </div>
+  </div>
+
+  <div class="cart" id="cart" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <p id="totalPrice">Итого: $0</p>
+  </div>
+</div>
+
+<h1 style="text-align: center; font-style: normal; font-size: xxx-large ">Animation section</h1>
+
+
+<!-- Animation Section -->
+<div class="animated-element" id="combinedElement" onclick="animateCombined('combinedElement')"></div>
+
+
+<!-- JavaScript Section -->
+<script src="https://kit.fontawesome.com/65c89343a4.js" crossorigin="anonymous"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+
+</html>

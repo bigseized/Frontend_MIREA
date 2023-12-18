@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <title>Animated Form</title>
+</head>
+<body>
+<h1>Ваше имя на языке Миньонов</h1>
+<form action="" method="get">
+    <p>
+        <label for="name" >Введите имя владельца банковской карты:</label>
+        <input type="text" name="name" id="name" placeholder="Введите ваше имя" required>
+    </p>
+    <p>
+        <label for="tel">Введите номер банковской карты:</label>
+        <input type="tel" name="tel" id="tel" required>
+    </p>
+    <p>
+        <label for="password">Введите пароль от банковской карты CVC</label>
+        <input type="password" name="password" id="password" required>
+    </p>
+    <p>
+        <label for="file"> Прикрепите фото паспорта</label>
+        <input type="file" name="file" id="file">
+    </p>
+    <p>
+        <label for="email">Введите email:</label>
+        <input type="email" name="email" id="email" required>
+    </p>
+    <p>
+        <label for="checkbox-input">Согласие на использование ваших данных:</label>
+        <input type="checkbox" id="checkbox-input" name="checkbox" checked>
+    </p>
+    <p>
+    <fieldset>
+        <legend>Выберите свой пол</legend>
+        <label for="radio1">
+            <input type="radio" id="radio1" name="radio" value="option1" checked> Мужчина
+        </label>
+        <label for="radio2">
+            <input type="radio" id="radio2" name="radio" value="option2"> Женщина
+        </label>
+    </fieldset>
+    </p>
+    <p>
+        <label for="datetime-local-input">Дата и время</label>
+        <input type="datetime-local" id="datetime-local-input" name="datetime-local">
+    </p>
+    <p>
+        <label for="textarea-input" >Расскажите почему вы хотите использовать этот сайт</label>
+        <textarea id="textarea-input" name="textarea" rows="4" cols="50" placeholder="Введите текст" required maxlength="200" minlength="20"></textarea>
+    </p>
+    <p>
+        <label for="select-input">Выбор:</label>
+        <select id="select-input" name="select" multiple size="3" required>
+            <option value="option1">Опция 1</option>
+            <option value="option2">Опция 2</option>
+            <option value="option3">Опция 3</option>
+        </select>
+    </p>
+    <p>
+        <label for="number-input">Введите число от 1 до 10:</label>
+        <input type="number" name="number" id="number-input" min="1" max="10" required>
+    </p>
+    <p>
+        <label for="url-input">Введите URL:</label>
+        <input type="url" name="url" id="url-input" pattern="https?://.*" placeholder="https://example.com">
+    </p>
+    <!-- Кнопка для отправки формы -->
+    <button type="submit">Отправить форму</button>
+</form>
+</body>
+</html>

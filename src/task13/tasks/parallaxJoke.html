@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task13</title>
+    <link rel="stylesheet" href="/task13/tasks/pract13.css">
+    <script src="https://kit.fontawesome.com/be9639af8e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section>
+        <img src="img.png" id = "bg">
+        <img src="pointingMan.png" id = "pointingman">
+        <img src="thinkingMan.png" id = "man">
+        <h2 id="text">США</h2>
+        <h3 id="bro">Бро, мы в телевизоре</h3>
+      </section>
+      <div class="additional-content">
+
+        <img src=/task12/waltuh.jpg alt="Другое изображение">
+      </div>
+      <script type="text/javascript">
+        let bg = document.getElementById("bg");
+        let pman = document.getElementById("pointingman");
+        let man = document.getElementById("man");
+        let text = document.getElementById("text");
+        
+        let manStyles = window.getComputedStyle(man);
+        let pmanStyles = window.getComputedStyle(pman);
+        let manLeft = parseFloat(manStyles.left);
+        let manTop = parseFloat(manStyles.top);
+        let pmanLeft = parseFloat(pmanStyles.left);
+        let pmanTop = parseFloat(pmanStyles.top);
+
+
+        window.addEventListener('scroll', function(){
+          let value = window.scrollY;
+          bg.style.top = value * 0.5 + 'px';
+          man.style.top = (manTop -value * 0.15) + 'px';
+          man.style.left = (manLeft + value * 0.15) + 'px';
+          pman.style.top = (pmanTop -value * 0.15) + 'px';
+          pman.style.left = (pmanLeft -value * 0.15) + 'px';
+          text.style.top = value * 1 + 'px';
+        });
+      </script>
+</body>
+</html>

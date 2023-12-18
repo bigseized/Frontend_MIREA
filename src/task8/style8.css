@@ -1,0 +1,790 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import "footer.css";
+h2 {
+    vertical-align: center;
+    text-align: center;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+* {
+    font-family: "Oswald";
+    box-sizing: border-box;
+}
+
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #00BAF0;
+    background: linear-gradient(to left, bisque, lightcoral);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #FFF;
+    height: 50px;
+    padding: 1em;
+}
+
+#logo {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+    .menu-button-container {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 80px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #menu-toggle ~ .menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #menu-toggle:checked ~ .menu li {
+        border: 1px solid white;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .menu > li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #dac6ab;
+    }
+
+    .menu > li:not(:last-child) {
+        border-bottom: 1px solid #444;
+    }
+}
+
+h2 {
+    vertical-align: center;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+nav ul {
+    margin-left: 10px;
+    flex-flow: row nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: .20em;
+    font-size: 20px;
+    background-color: bisque;
+    margin-left: 50px;
+}
+
+
+nav li a {
+    padding: 14px 16px;
+    text-decoration: #7c4130 underline;
+}
+
+* {
+    font-family: "Raleway";
+    box-sizing: border-box;
+}
+
+.top-nav {
+    background-color: rgb(234, 198, 183);
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 80px;
+}
+
+
+#first1 {
+    margin-right: 10px;
+    font-family: Oswald;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 1px 1px #000;
+    text-outline: 1px black;
+}
+
+* {
+    margin: 0;
+}
+
+
+/*----------------------------------------------*/
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+@keyframes change-color {
+    from {
+        color: #000000;
+        background-color: #ffffff;
+    }
+    30% {
+        color: #000000;
+        background-color: #002aff;
+    }
+    50% {
+        color: #000000;
+        background-color: #e83a3a;
+    }
+    to {
+        color: #000000;
+        background-color: #ffffff;
+    }
+}
+
+.button1 {
+    color: #000000;
+    background-color: #ffbcbc;
+}
+
+.button1:hover::before {
+    background-color: #2980b9;
+}
+
+.button1:hover::after {
+    opacity: 0;
+}
+
+.button1:hover {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease-in-out; /* Добавляем анимацию transition */
+}
+
+
+.button2 {
+    color: #fff;
+    background-color: #b833ff;
+    transition: transform 0.5s ease-in-out; /* Добавляем анимацию transition */
+}
+
+.button2:active {
+    transform: perspective(1000px) rotateY(120deg); /* Вращение в 3D при нажатии */
+}
+
+.button2:hover::after {
+    opacity: 0;
+}
+
+.button3 {
+    color: #150101;
+    background-color: #7c5447;
+}
+
+.button3:hover {
+    animation: change-color;
+    animation-duration: 3s;
+}
+
+@keyframes rotateUp {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(90deg);
+    }
+}
+
+.button4 {
+    color: #fff;
+    background-color: #ffbc13;
+}
+
+.button4:active {
+    animation: infinite;
+    transform: rotateX(-360deg); /* Поворачиваем кнопку в 3D-пространстве при наведении */
+    transition: transform 5s ease-in-out; /* Добавляем анимацию transition */
+}
+
+.video-container {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+    max-width: 560px; /* Ширина видео */
+    height: 300px;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.video-container:hover iframe {
+    transform: scale(1.1);
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.caption_video {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(51, 84, 234, 0.24);
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.video-container:hover .caption_video {
+    transform: translateY(0);
+}
+
+/*---------------------*/
+
+.notification-container:hover i {
+    animation: 1s fa-shake;
+}
+
+.notification-container:hover .notifications {
+    transition: height 400ms ease-in-out 100ms, color 0ms linear 400ms;
+    color: #050000;
+    opacity: 100%;
+    height: 10rem;
+    z-index: 1000000000;
+}
+
+.notification-container {
+    background-color: #e0e0e0;
+    width: 5rem;
+    height: 5rem;
+    padding-right: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: fixed;
+    font-size: 3rem;
+    color: #7a7a7a;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    animation-name: none;
+    z-index: 1000000;
+}
+
+.notification-container > .count {
+    position: absolute;
+    font-size: 1rem;
+    right: 0;
+    top: 0;
+    background-color: #072ae0;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+    z-index: 50000;
+}
+
+.notifications {
+    transition: height 400ms ease-in-out 100ms, color 0ms linear 400ms;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: #bbbbbb;
+    border-radius: 10px;
+    width: 15rem;
+    height: 0;
+    font-size: 1rem;
+    z-index: 100000;
+}
+
+.notifications > ol {
+    list-style: none;
+}
+
+.notifications > ol > li {
+    margin: 15px 0;
+    position: relative;
+    counter-increment: step-counter;
+    font-size: 16px;
+    transition: transform 100ms ease-in-out;
+}
+
+.notifications > ol > li:before {
+    border-radius: 50%;
+    background-color: #072ae0;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    content: counter(step-counter);
+    font-size: 0.8rem;
+    position: absolute;
+    right: 101%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.notifications > ol > li:hover {
+    margin: 15px 0;
+    position: relative;
+    counter-increment: step-counter;
+    font-size: 16px;
+    transform: scale(1.05);
+}
+
+.notifications-header {
+    display: flex;
+    justify-content: center;
+    background-color: #072ae0;
+    padding: 5px;
+    align-items: center;
+    color: white;
+}
+
+/*---------3 задание---------*/
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image {
+    position: relative;
+    flex: 1;
+    max-width: 300px;
+    margin: 10px;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    text-align: center;
+    overflow: hidden;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(244, 255, 0, 0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image:hover::before {
+    opacity: 1;
+}
+
+.image .caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image:hover .caption {
+    opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+    .image {
+        flex: 1 0 50%; /* Уменьшаем количество столбцов до 2 на экранах шириной меньше 768px */
+    }
+}
+
+@media (max-width: 480px) {
+    .image {
+        flex: 1 0 100%; /* Уменьшаем количество столбцов до 1 на экранах шириной меньше 480px */
+    }
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Три строки: header, main, footer */
+    min-height: 100vh; /* Занимаем всю высоту видимой области */
+}
+
+
+main {
+    display: grid;
+    padding: 20px;
+}
+
+.gallery {
+    display: grid;
+    font-size: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Мозаичное распределение */
+    gap: 20px;
+    width: 100%; /* Галерея занимает 100% ширины родительского контейнера */
+    max-width: 100%; /* Но не превышает максимальной ширины */
+    margin: 0; /* Убираем отступы по умолчанию */
+}
+
+h2.gallery {
+    padding-bottom: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Плавная анимация при наведении */
+}
+
+.gallery-item:nth-child(5n) {
+    grid-row: span 2;
+}
+
+.gallery-item:hover {
+    transform: scale(1.1); /* Увеличение элемента при наведении */
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0; /* Начальная непрозрачность */
+    transition: opacity 0.3s ease; /* Плавная анимация при наведении */
+}
+
+.gallery-item:hover .image-overlay {
+    opacity: 1; /* Проявление при наведении */
+}
+
+.image-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    opacity: 0; /* Начальная непрозрачность */
+    transition: opacity 0.3s ease; /* Плавная анимация при наведении */
+}
+
+.gallery-item:hover .image-description {
+    opacity: 1; /* Проявление при наведении */
+}
+
+footer {
+    padding: 20px;
+    background-color: #1b061d;
+}
+
+.social-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.social-button {
+    text-align: center;
+}
+
+.social-button a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-button a:hover {
+    background-color: #3498db;
+    transform: scale(1.1);
+}
+
+.social-button::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.social-button:hover::before {
+    width: 80%;
+}
+
+
+
+    /* Медиазапрос для устройств с максимальной шириной 600px */
+    @media screen and (max-width: 600px) {
+        main {
+            padding: 10px;
+        }
+
+        .cards {
+            grid-template-columns: 1fr; /* Один столбец на мобильных устройствах */
+        }
+
+        .gallery {
+            grid-column: span 2; /* Галерея занимает один столбец на мобильных устройствах */
+        }
+
+        .gallery-item {
+            flex: 1 0 100%; /* На узких экранах элементы занимают всю ширину */
+        }
+
+        header h1 {
+            font-size: 22px;
+        }
+
+        .menu-button-container {
+            display: flex;
+        }
+
+        .menu {
+            position: absolute;
+            top: 40px;
+            margin-top: 50px;
+            left: 0;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #menu-toggle ~ .menu li {
+            height: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        #menu-toggle:checked ~ .menu li {
+            border: 1px solid #333;
+            height: 2.5em;
+            padding: 0.5em;
+            transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .menu > li {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0.5em 0;
+            width: 100%;
+            color: white;
+            background-color: #222;
+        }
+
+        .menu > li:not(:last-child) {
+            border-bottom: 1px solid #444;
+        }
+
+        pre {
+            margin: 0;
+        }
+
+        footer {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .social-buttons {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto); /* Определяем минимальную высоту для строк */
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    grid-column-end: span 1; /* Определяем, сколько ячеек будет занимать изображение по горизонтали */
+    grid-row-end: span 1; /* Определяем, сколько ячеек будет занимать изображение по вертикали */
+}
+
+/* Стиль для первой картинки, которая занимает две ячейки по горизонтали и вертикали */
+.image:nth-child(1) {
+    grid-column-end: span 2; /* Занимает 2 ячейки по горизонтали */
+    grid-row-end: span 2; /* Занимает 2 ячейки по вертикали */
+}
+
+.image:nth-child(5) {
+    grid-column-end: span 2; /* Занимает 2 ячейки по горизонтали */
+    grid-row-end: span 2; /* Занимает 2 ячейки по вертикали */
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image:hover {
+    transform: scale(1.1);
+}
+
+/* Дополнительный стиль для плавной анимации при наведении */
+.image img:hover {
+    transition: transform 0.3s;
+    transform: scale(1.1);
+}

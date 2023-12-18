@@ -1,0 +1,245 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  max-width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.line {
+  width: 100%;
+  height: 2px;
+  background: black;
+}
+
+button {
+  background: black;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: calc(12px + 0.5vw);
+  font-weight: 900;
+}
+
+.task-title {
+  width: fit-content;
+  margin: 20px;
+  font-size: calc(30px + 4vw);
+  font-weight: 900;
+}
+
+.task1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.task1-img { 
+  position: absolute;
+  width: calc(100px + 20vw);
+}
+
+.coord {
+  width: fit-content;
+  margin-left: 20px;
+  font-size: calc(16px + 1vw);
+}
+
+.task1-coord {
+  margin-left: 20px;
+  display: block;
+  width: fit-content;
+  font-size: calc(16px + 1vw);
+  font-weight: 900;
+}
+
+.notification-container {
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.notifications {
+  width: 500px;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.notifications::-webkit-scrollbar {
+  width: 3px; /* Ширина полосы прокрутки */
+}
+
+/* Стили для трека (бара) полосы прокрутки WebKit (Chrome, Safari) */
+.notifications::-webkit-scrollbar-track {
+  background: transparent; /* Цвет трека (бара) */
+}
+
+/* Стили для дорожки полосы прокрутки WebKit (Chrome, Safari) */
+.notifications::-webkit-scrollbar-thumb {
+  background-color: black; /* Цвет дорожки (бара) */
+  border-radius: 5px; /* Радиус углов дорожки (бара) */
+}
+
+.notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  padding: 20px;
+  margin-bottom: 5px;
+  border: 3px solid black;
+  border-radius: 20px;
+  font-size: calc(12px + 0.5vw);
+  text-align: left;
+}
+
+.notification i {
+  font-size: calc(16px + 0.5vw);
+  transition: transform 0.2;
+}
+
+.notification i:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+.notification-counter {
+  font-size: calc(12px + 0.5vw);
+}
+
+/* .parallax {
+  position: relative;
+}
+
+.parallax-image.parallax-image__0 {
+  width: calc(200px + 12vw);
+}
+
+.parallax-image {
+  position: absolute;
+  width: calc(50px + 7vw);
+} */
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #00ffa8, transparent);
+  z-index: 10;
+}
+section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #00ffa8, transparent);
+  z-index: 10;
+  mix-blend-mode: color;
+}
+section img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+#text {
+  position: relative;
+  color: #fff;
+  font-size: 10em;
+  z-index: 1; 
+}
+
+#bro {
+  position: absolute;
+  color: #fff;
+  font-size: 3em;
+  z-index: 1;
+  bottom: 0;
+}
+
+#man {
+  max-width: 300px;
+  max-height: 300px;
+  object-fit:scale-down;
+  left: 0;
+  bottom: 0;
+}
+
+#pointingman {
+  max-width: 400px;
+  max-height: 400px;
+  object-fit:scale-down;
+  right: 0;
+  bottom: 0;
+}
+
+.infoBlock {
+  background: #830c0c;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  width: 80vw;
+}
+
+.infoHeader {
+  display: flex;
+  justify-content: center;
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.infoCard img {
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 10px;
+}
+
+.infoBlock p {
+  font-size: 1.5em;
+  margin: 10px;
+}
+
+.mainUseless {
+  font-weight: 900;
+}
+
+.infoCard p {
+  margin: 10px;
+  font-size: 3em;
+}
+.additional-content img{
+  width:100vw
+}
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task13</title>
+    <link rel="stylesheet" href="/pract13.css">
+    <script src="https://kit.fontawesome.com/be9639af8e.js" crossorigin="anonymous"></script>
+    <script src="pract13.js" type="text/javascript" defer></script>
+</head>
+<body>
+<div class="task1">
+    <img class="task1-img" src="/task12/waltuh.jpg" alt="">
+    <div class="task1-info">
+        <span class="task1-coord">Координаты</span>
+        <span class="coord">x: 0, y: 0</span>
+    </div>
+</div>
+<div class="line"></div>
+<div class="task2">
+    <div class="notification-container">
+        <button onclick="startNotifications()">Запустить уведомления</button>
+        <div class="notifications">
+            <!-- Здесь будут отображаться уведомления -->
+        </div>
+    </div>
+</div>
+<div class="line"></div>
+</body>
+<style>
+    .task1 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .task1-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px; /* Добавил скругление углов */
+    }
+
+    .task1-info {
+        margin-top: 10px;
+    }
+
+    /* Стили для line */
+    .line {
+        border-top: 2px solid #ccc; /* Изменил стиль линии между блоками */
+        margin: 20px 0;
+    }
+
+    /* Стили для task2 */
+    .task2 {
+        text-align: center;
+    }
+
+    .notification-container {
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    .notifications {
+        margin-top: 10px;
+        max-width: 300px; /* Ширина контейнера уведомлений */
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow-y: auto; /* Добавил возможность прокрутки, если уведомлений много */
+        max-height: 200px; /* Максимальная высота контейнера уведомлений */
+    }
+</style>
+</html>
